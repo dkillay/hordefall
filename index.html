@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HORDEFALL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Black+Ops+One&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="hud" class="hidden">
+      <div id="vignette"></div>
+      <div id="lowhp"></div>
+      <div id="dmgind"></div>
+
+      <div id="crosshair"><i class="t"></i><i class="b"></i><i class="l"></i><i class="r"></i></div>
+      <div id="hitmarker"><i></i><i></i><i></i><i></i></div>
+
+      <div id="top">
+        <div id="wave">WAVE 1</div>
+        <div id="mobsleft">HOSTILES 0</div>
+      </div>
+      <div id="scorebox">
+        <div id="score">0</div>
+        <div id="combo"></div>
+      </div>
+      <div id="killfeed"></div>
+      <div id="banner"><div class="big"></div><div class="small"></div></div>
+
+      <div id="hpbox">
+        <div class="label">VITALS</div>
+        <div id="hpbar"><div id="hpfill"></div></div>
+        <div id="hptext">100</div>
+      </div>
+
+      <div id="ammobox">
+        <div id="slots">
+          <div class="slot" data-i="0"><b>1</b> RIFLE</div>
+          <div class="slot" data-i="1"><b>2</b> SCATTER</div>
+          <div class="slot" data-i="2"><b>3</b> RAIL</div>
+        </div>
+        <div id="ammo"><span id="mag">30</span><span id="reserve">/ 180</span></div>
+        <div id="reloadwrap"><div id="reloadbar"></div></div>
+      </div>
+    </div>
+
+    <div id="menu" class="overlay">
+      <div class="panel">
+        <div class="eyebrow">// ARENA SURVIVAL //</div>
+        <h1 data-text="HORDEFALL">HORDEFALL</h1>
+        <p class="tag">They come in waves. You don't stop shooting.</p>
+        <button id="play">DEPLOY</button>
+        <div class="controls">
+          <div><kbd>WASD</kbd> move</div>
+          <div><kbd>SHIFT</kbd> sprint</div>
+          <div><kbd>SPACE</kbd> jump</div>
+          <div><kbd>LMB</kbd> fire</div>
+          <div><kbd>RMB</kbd> aim</div>
+          <div><kbd>R</kbd> reload</div>
+          <div><kbd>1-3</kbd> / wheel switch</div>
+          <div><kbd>ESC</kbd> pause</div>
+        </div>
+        <div class="bestiary">
+          <div><span class="dot" style="--c:#ff3b1f"></span>GRUNT <em>shambles, hits hard</em></div>
+          <div><span class="dot" style="--c:#ffe23b"></span>RUNNER <em>fast, fragile</em></div>
+          <div><span class="dot" style="--c:#6bffd8"></span>SPITTER <em>keeps distance, lobs acid</em></div>
+          <div><span class="dot" style="--c:#ff2e88"></span>BRUTE <em>a wall with fists</em></div>
+        </div>
+        <div id="best"></div>
+      </div>
+    </div>
+
+    <div id="pause" class="overlay hidden">
+      <div class="panel small">
+        <h2>PAUSED</h2>
+        <button id="resume">RESUME</button>
+        <p class="hint">Click resume to recapture the mouse</p>
+      </div>
+    </div>
+
+    <div id="gameover" class="overlay hidden">
+      <div class="panel">
+        <div class="eyebrow red">// SIGNAL LOST //</div>
+        <h1 class="dead" data-text="YOU FELL">YOU FELL</h1>
+        <div id="overstats"></div>
+        <button id="retry">REDEPLOY</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
